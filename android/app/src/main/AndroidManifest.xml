@@ -1,0 +1,75 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- Network and WiFi permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    
+    <!-- Storage permissions -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    
+    <!-- System permissions for root operations -->
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    
+    <!-- Camera and microphone for advanced attacks -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    
+    <!-- Phone state for device identification -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    
+    <!-- Notification permissions -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    
+    <!-- Wake lock for long-running attacks -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:label="WiMax Pentest"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher"
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true">
+        
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme" />
+              
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+    
+    <!-- Queries for package visibility -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="http" />
+        </intent>
+    </queries>
+</manifest>
